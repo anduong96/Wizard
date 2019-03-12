@@ -1,0 +1,31 @@
+{
+  "name": "wizard",
+  "version": "1.0.0",
+  "author": "An Duong <an.duongx@gmail.com>",
+  "description": "Abstract MERN build process",
+  "homepage": "https://github.com/anduong96/Wizard#readme",
+  "license": "MIT",
+  "scripts": {},
+  "engines": {
+    "node": ">=8"
+  },
+  "bin": {
+    "outside": "bin/outside"
+  },
+  "keywords": [
+    "cli",
+    "mern",
+    "node"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://anduong96@github.com/anduong96/Wizard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anduong96/Wizard/issues"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
