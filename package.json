@@ -5,12 +5,29 @@
   "description": "Abstract MERN build process",
   "homepage": "https://github.com/anduong96/Wizard#readme",
   "license": "MIT",
-  "scripts": {},
+  "preferGlobal": true,
+  "scripts": {
+    "start": "node bin/wizard.js dev",
+    "build": "babel src --out-dir dist",
+    "build:watch": "babel --watch src --out-dir dist"
+  },
   "engines": {
     "node": ">=8"
   },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "8"
+          }
+        }
+      ]
+    ]
+  },
   "bin": {
-    "outside": "bin/outside"
+    "wizard": "bin/wizard"
   },
   "keywords": [
     "cli",
@@ -24,8 +41,15 @@
   "bugs": {
     "url": "https://github.com/anduong96/Wizard/issues"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "ghooks": "^2.0.4"
+  },
   "dependencies": {
-    "fs": "0.0.1-security"
+    "chalk": "^2.4.2",
+    "minimist": "^1.2.0"
   }
 }
