@@ -1,5 +1,28 @@
+import gulp from 'gulp'
+import named from 'vinyl-named'
+import webpackStream from 'webpack-stream'
+import chalk from 'chalk'
+import { isValidProject, getCurrentDir, getPackageJson } from '../../util/common'
+import getDevConfig from '../../webpack/prod.config'
+
 function production() {
-    console.log('prod')
+    if (!isValidProject()) {
+        console.log(chalk.redBright.bold('Invalid project.'))
+        return
+    }
+
+    const dir = getCurrentDir()
+    const packageJson = getPackageJson(dir)
+    const wizard = packageJson.wizard || {}
+    const output = `${dir}/production/dist`
+    const config = getDevConfig({ location: output })
+
+    gulp.src(`${dir}/${wizard.client || 'client/app/index.js'}`)
+        .pipe(named())
+        .pipe(webpackStream({ config }))
+        .pipe(minify())
+        .pipe(gzip())
+        .pipe(gulp.dest(output))
 }
 
 export default production
