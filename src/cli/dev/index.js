@@ -1,5 +1,9 @@
+import { isValidProject } from '../../util/common'
+
 function development() {
-    console.log('dev')
+    if (isValidProject()) {
+        console.log('is valid')
+    }
 }
 
 export default development
