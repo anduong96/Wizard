@@ -15,11 +15,11 @@ function development() {
 
     const dir = getCurrentDir()
     const packageJson = getPackageJson(dir)
-    const wizard = packageJson.wizard || {}
+    const wwyd = packageJson.wwyd || {}
     const output = `${dir}/development/dist`
     const config = getDevConfig({ location: output })
 
-    gulp.src(`${dir}/${wizard.client || 'client/app/index.js'}`)
+    gulp.src(`${dir}/${wwyd.client || 'client/app/index.js'}`)
         .pipe(named())
         .pipe(webpackStream({ config }))
         .pipe(sourcemaps.init())
@@ -29,8 +29,8 @@ function development() {
     nodemon({
         script: `${dir}/index.js`,
         ext: 'js',
-        watch: wizard.watch,
-        ignore: wizard.ignore,
+        watch: wwyd.watch,
+        ignore: wwyd.ignore,
         verbose: true,
         legacyWatch: true,
         restartable: 'rs'

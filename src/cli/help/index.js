@@ -10,7 +10,7 @@ function help() {
     }))
 
     console.log(chalk.blue.bold('\n\nExample:\n'))
-    console.log('wizard dev')
+    console.log('wwyd dev')
     console.log('\n\n')
 }
 

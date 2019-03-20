@@ -1,13 +1,13 @@
 {
-  "name": "wizard",
+  "name": "wwyd",
   "version": "0.0.1",
   "author": "An Duong <an.duongx@gmail.com>",
   "description": "Abstract MERN build process",
-  "homepage": "https://github.com/anduong96/Wizard#readme",
+  "homepage": "https://github.com/anduong96/wwyd#readme",
   "license": "MIT",
   "preferGlobal": true,
   "scripts": {
-    "start": "node bin/wizard.js dev",
+    "start": "node bin/wwyd.js dev",
     "build": "babel src --out-dir dist",
     "build:watch": "babel --watch src --out-dir dist"
   },
@@ -27,7 +27,7 @@
     ]
   },
   "bin": {
-    "wizard": "bin/wizard"
+    "wwyd": "bin/wwyd"
   },
   "keywords": [
     "cli",
@@ -36,10 +36,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://anduong96@github.com/anduong96/Wizard.git"
+    "url": "git+https://anduong96@github.com/anduong96/wwyd.git"
   },
   "bugs": {
-    "url": "https://github.com/anduong96/Wizard/issues"
+    "url": "https://github.com/anduong96/wwyd/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",

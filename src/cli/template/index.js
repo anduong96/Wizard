@@ -6,9 +6,9 @@ const templateLocation = 'https://github.com/anduong96/Mage.git'
 const bash = util.promisify(exec)
 
 async function template() {
-    const destination = `${getCurrentDir()}/wizard-project`
+    const destination = `${getCurrentDir()}/wwyd-project`
     await bash(`git clone ${templateLocation} ${destination}`)
-    await bash('cd wizard-project')
+    await bash('cd wwyd-project')
 }
 
 export default template

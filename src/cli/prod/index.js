@@ -13,11 +13,11 @@ function production() {
 
     const dir = getCurrentDir()
     const packageJson = getPackageJson(dir)
-    const wizard = packageJson.wizard || {}
+    const wwyd = packageJson.wwyd || {}
     const output = `${dir}/production/dist`
     const config = getDevConfig({ location: output })
 
-    gulp.src(`${dir}/${wizard.client || 'client/app/index.js'}`)
+    gulp.src(`${dir}/${wwyd.client || 'client/app/index.js'}`)
         .pipe(named())
         .pipe(webpackStream({ config }))
         .pipe(minify())
