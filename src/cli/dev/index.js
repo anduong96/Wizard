@@ -16,8 +16,11 @@ function development() {
     const dir = getCurrentDir()
     const packageJson = getPackageJson(dir)
     const wwyd = packageJson.wwyd || {}
+    const watch = wwyd.watch || []
+    const ignore = wwyd.ignore || []
+    const entry = wwyd.entry || `${dir}/index.js`
     const output = `${dir}/development/dist`
-    const config = getDevConfig({ location: output })
+    const config = getDevConfig({ output, entry })
 
     gulp.src(`${dir}/${wwyd.client || 'client/app/index.js'}`)
         .pipe(named())
@@ -29,8 +32,8 @@ function development() {
     nodemon({
         script: `${dir}/index.js`,
         ext: 'js',
-        watch: wwyd.watch,
-        ignore: wwyd.ignore,
+        watch: watch.map(f => `${dir}/${f}`),
+        ignore: ignore.map(f => `${dir}/${f}`),
         verbose: true,
         legacyWatch: true,
         restartable: 'rs'

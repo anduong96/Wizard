@@ -37,13 +37,12 @@ export function getPackageJson(dir) {
  */
 export function isValidProject() {
     const packageJson = getPackageJson(getCurrentDir())
-
     if (!packageJson) {
         console.log('package.json does not exist!')
         return false
     }
 
-    const hasKraken = packageJson.dependencies.hasOwnProperty('kraken-js')
+    const hasKraken = true
 
     //TODO: more checks
     return hasKraken

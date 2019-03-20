@@ -2,7 +2,8 @@ import Webpack from 'webpack'
 import MomentLocalesPlugin from 'moment-locales-webpack-plugin'
 
 export default ({
-    location
+    output,
+    entry
 }) => ({
 
     devtool: 'cheap-module-eval-source-map',
@@ -12,14 +13,14 @@ export default ({
             'eventsource-polyfill',
             'webpack-hot-middleware/client',
             'webpack/hot/only-dev-server',
-            'index.js'
+            entry
         ],
         vendor: ['react', 'react-dom']
     },
 
     output: {
         filename: 'bundle.js',
-        path: location
+        path: output
     },
 
     resolve: {
@@ -32,9 +33,9 @@ export default ({
             {
                 test: /\.s?css$/,
                 use: [
-                    "style-loader", // creates style nodes from JS strings
-                    "css-loader", // translates CSS into CommonJS
-                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                    'style-loader', // creates style nodes from JS strings
+                    'css-loader', // translates CSS into CommonJS
+                    'sass-loader' // compiles Sass to CSS, using Node Sass by default
                 ]
             },
             {

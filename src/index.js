@@ -1,1 +1,3 @@
-export { default as devHotWebpackConfig } from './webpack/dev.hot.config'
+import all from './webpack/dev.hot.config';
+
+export default all
