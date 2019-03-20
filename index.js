@@ -1,1 +1,2 @@
-export { default as devHotWebpackConfig } from './src'
+var devConfig = require('./dist')
+module.exports = devConfig

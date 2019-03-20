@@ -83,6 +83,5 @@ typings/
 .dynamodb/
 
 /.DS_Store
-/dist
 /package-lock.json
 yarn.lock
